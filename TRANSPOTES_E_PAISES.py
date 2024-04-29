@@ -92,15 +92,40 @@ for numero in PAISES:
 # INICIANDO BATALHA NAVAL 
 
 print ('Iniciando a batalha naval!')
-# print ('5')
-# time.sleep(1)
-# print ('4')
-# time.sleep(1)
-# print ('3')
-# time.sleep(1)
-# print ('2')
-# time.sleep(1)
-# print ('1')
+print ('5')
+print ('4')
+print ('3')
+print ('2')
+print ('1')
+#intervalo tempo - fallta 
 
-              
-#               PRINT (TABULEIRO) 
+
+
+# PRINT (TABULEIRO)
+# CHUTE COMPUTADOR 
+#CHUTE PESSOA 
+print () 
+
+print ('Coordenadas do seu disparo')
+letra = input('Letra:') 
+linha = input ('Linha:') 
+# ver linha 
+acerto = 'Água!'or  'BOOOOOOOMMMMMM!!!!!'
+print ('Jogador   ----->>>>> {0}{1}       {2}!'. fromat(letra,linha,acerto))
+
+#Posição E6 já bombardeada!
+
+
+
+
+
+# Você venceu!
+# Temos um novo xerife nos mares!
+# Jogar novamente? [s|n] 
+
+# Você perdeu!
+# Nao e bem vindo nesses mares!
+# Jogar novamente? [s|n] 
+
+
+
