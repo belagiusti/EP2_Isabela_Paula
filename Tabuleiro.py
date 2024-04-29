@@ -1,5 +1,6 @@
 Letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 import random
+import constantes
 
 def mapa_matrix(n):
     matrix = []
@@ -54,4 +55,15 @@ def derrotado(matrix):
                 return False
     return True
 
-    
+def printando_mapas(matrix_comp, matrix_jogador):
+    print("\n")
+    print("               MAPA COMPUTADOR                                     MAPA JOGADOR")
+    print("  A   B   C   D   E   F   G   H   I   J               A   B   C   D   E   F   G   H   I   J   ")
+    for i_lista in range(len(matrix_comp)):
+        linha = ""
+        linha+= str(i_lista + 1)
+        for info in range(len(matrix_comp[i_lista])):
+            if matrix_comp[i_lista][info] == 'X':
+                if i_lista == 9 and info==0:
+                    linha+= ("   "+"\u001b[33m"+(matrix_comp[i_lista][info])+'\u001b[0m')
+            
