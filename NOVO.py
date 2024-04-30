@@ -51,42 +51,68 @@ PAISES =  {
     }}
 }
 
+print (PAISES)
+# print paises certo 
+
+numero_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numero_nacao = int(input('Qual o número da nação da sua frota?'))
+QUANT_T  = 0      
+for i in range(len(numero_lista)):
+    if numero_lista[i] == numero_nacao:
+        for pais, dic_transportes in PAISES[numero_lista[i]].items():
+            print('Você escolheu a nação {0}'.format(pais))
+            print('Agora é a sua vez de alocar seus navios de guerra!')
+            # print tabuleiro 
+            lista_transporte_nome = [] 
+            for transporte_nome, quantidade in dic_transportes.items():
+                lista_transporte_nome.extend([transporte_nome] * quantidade)
+                
+                QUANT_T += quantidade
+aloca = lista_transporte_nome[0]
+del lista_transporte_nome [0]
+for transporte_nome, quantidade in TRANSPORTE.items():
+    if transporte_nome == aloca:
+        for i in range(0,QUANT_T):
+            print('Alocar: {0} ({1} blocos)'.format(aloca, quantidade))
+            print('Próximos: {0}'.format(', '.join(lista_transporte_nome)))
+            aloca = lista_transporte_nome[0]
+            del lista_transporte_nome [0]
+            # perguntar linha e coluna 
+            # verificar linha e coluna
+            # pintar tabuleiro e printar 
+            # uma hora acaba e comacar jogo!
 
 
-lista_transporte_nome = []
-numero_nacao = input('Qual o número da nação da sua frota?')
+# imprime aloca e proximos 
+                    
 
-for numero in PAISES.keys():
-    if numero == numero_nacao:
-        for pais, transportes_pais_qnt in numero.items():
-            print ('Você escolheu a nação {0}'. format(pais))
-            print ('Agora é a sua vez de alocar seus navios de guerra!')
-#            print (TABULEIRO)
 
-            for transporte_nome, quantidade in transportes_pais_qnt.items():
-                lista_transporte_nome.append(transporte_nome)
-                for transporte_TRANSPORTE, qnt_blocos in TRANSPORTE.items():
-                    if transporte_nome == transporte_TRANSPORTE:
-                        blocos = qnt_blocos 
-                        print ('alocar: {0} ({1} blocos)'.format(transporte_nome, blocos))
-                        for i in range(len(lista_transporte_nome)):
-                            if transporte_nome != lista_transporte_nome[0]:
-                                del lista_transporte_nome [i - 1]
-                                resto_transporte = (' ').join(lista_transporte_nome)
-                            else:   
-                                resto_transporte = (' ').join(lista_transporte_nome)
-                            if resto_transporte != '':
-                                print ('proximos:{0}'.format(resto_transporte))
-                                informe_letra = input('Informe a Letra:')
-                                informe_linha = input('Informe a Linha:')
-                                informe_orientacao = input ('Informe a Orientação [v|h]:')
-                                print ('Navio alocado!')
-                            if resto_transporte == '':
-                                informe_letra = input('Informe a Letra:')
-                                informe_linha = input('Informe a Linha:')
-                                informe_orientacao = input ('Informe a Orientação [v|h]:')
-                                print ('Todos os navios foram alocados!')
-                            #PRINT TABULEIRO 
+
+for transporte_nome, quantidade in dic_transportes.items():
+    lista_transporte_nome.append(transporte_nome)
+    for transporte_TRANSPORTE, qnt_blocos in TRANSPORTE.items():
+        if transporte_nome == transporte_TRANSPORTE:
+            blocos = qnt_blocos 
+            print ('alocar: {0} ({1} blocos)'.format(transporte_nome, blocos))
+            for i in range(len(lista_transporte_nome)):
+                if transporte_nome != lista_transporte_nome[0]:
+                    del lista_transporte_nome [i - 1]
+                    resto_transporte = (' ').join(lista_transporte_nome)
+                else:   
+                    resto_transporte = (' ').join(lista_transporte_nome)
+                if resto_transporte != '':
+                    print ('proximos:{0}'.format(resto_transporte))
+                    informe_letra = input('Informe a Letra:')
+                    informe_linha = input('Informe a Linha:')
+                    informe_orientacao = input ('Informe a Orientação [v|h]:')
+                    print ('Navio alocado!')
+                if resto_transporte == '':
+                    informe_letra = input('Informe a Letra:')
+                    informe_linha = input('Informe a Linha:')
+                    informe_orientacao = input ('Informe a Orientação [v|h]:')
+                    print ('Todos os navios foram alocados!')
+                #PRINT TABULEIRO 
+i += 1 
 
 # INICIANDO BATALHA NAVAL 
 
