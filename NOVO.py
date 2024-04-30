@@ -51,7 +51,7 @@ PAISES =  {
     }}
 }
 
-print (PAISES)
+
 
 lista_transporte_nome = []
 numero_nacao = input('Qual o número da nação da sua frota?')
