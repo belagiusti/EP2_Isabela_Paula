@@ -195,17 +195,73 @@ for i in range(1, 11):
 print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
 
 
-
-lista_para_informe_linha =[ 1, 2, 3, 4, 5, 6, 7, ,8 ,9 ,10]
-
+# chute jogador 
 if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
-    if informe_linha in lista_para_informe_linha:
+    if informe_linha in range(1, 11):
         for numero, lista in dic_mapa.items():
             if numero == informe_linha:
-                if informe_letra == 'A':
-                    if [informe_linha][0] not ocupado:\
-                        dic_mapa[informe_linha][0] = ™¡ª
+                if informe_letra == 'A' or informe_letra == 'a':
+                    if [informe_linha][0] == ' ':
+                        dic_mapa[informe_linha][0] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'A' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'B' or informe_letra == 'b':
+                    if [informe_linha][1] == ' ':
+                        dic_mapa[informe_linha][1] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'B' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'C' or informe_letra == 'c':
+                    if [informe_linha][2] == ' ':
+                        dic_mapa[informe_linha][2] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'C' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'D' or informe_letra == 'd':
+                    if [informe_linha][3] == ' ':
+                        dic_mapa[informe_linha][3] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'D' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'E' or informe_letra == 'e':
+                    if [informe_linha][4] == ' ':
+                        dic_mapa[informe_linha][4] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'E' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'F' or informe_letra == 'f':
+                    if [informe_linha][5] == ' ':
+                        dic_mapa[informe_linha][5] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'F' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'G' or informe_letra == 'g':
+                    if [informe_linha][6] == ' ':
+                        dic_mapa[informe_linha][6] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'G' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'H' or informe_letra == 'h':
+                    if [informe_linha][7] == ' ':
+                        dic_mapa[informe_linha][7] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'H' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'I' or informe_letra == 'i':
+                    if [informe_linha][8] == ' ':
+                        dic_mapa[informe_linha][8] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'I' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
+                if informe_letra == 'J' or informe_letra == 'j':
+                    if [informe_linha][9] == ' ':
+                        dic_mapa[informe_linha][9] = (u"\u001b[32m   \u001b[0m")
+                    else:
+                        x = 'J' + informe_linha + informe_orientacao
+                        print ('Não foi possível alocar o navio em {x}')
     else: 
         print ('linha invalida')
 else:
     print ('coluna invalida')
+
