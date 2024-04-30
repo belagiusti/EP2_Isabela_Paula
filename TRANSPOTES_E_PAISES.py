@@ -111,7 +111,7 @@ letra = input('Letra:')
 linha = input ('Linha:') 
 # ver linha 
 acerto = 'Água!'or  'BOOOOOOOMMMMMM!!!!!'
-print ('Jogador   ----->>>>> {0}{1}       {2}!'. fromat(letra,linha,acerto))
+print ('Jogador   ----->>>>> {0}{1}       {2}!'. format(letra,linha,acerto))
 
 #Posição E6 já bombardeada!
 
