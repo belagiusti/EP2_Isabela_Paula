@@ -1,4 +1,4 @@
-import TRANSPOTES_E_PAISES
+
 
 dic_mapa_comp= {
     'letra': ['A','B','C','D','E','F','G','H','I','J'],
