@@ -22,4 +22,3 @@ print("   " + "  ".join(dic_mapa_comp['letra2']))  # Imprime a linha de letras
 
 print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
 
-print("é assim q commita")
