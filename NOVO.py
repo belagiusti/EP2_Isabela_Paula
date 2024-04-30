@@ -266,7 +266,3 @@ else:
     print ('coluna invalida')
 
 
-
-
-
-
