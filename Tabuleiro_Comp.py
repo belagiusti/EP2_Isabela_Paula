@@ -20,3 +20,6 @@ for i in range(1, 11):
     print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
 print("   " + "  ".join(dic_mapa_comp['letra2']))  # Imprime a linha de letras
 
+print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
+
+print("é assim q commita")
