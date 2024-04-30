@@ -32,3 +32,4 @@ for i in range(1, 11):
     print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
 print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
 
+def suporta_bloco ()

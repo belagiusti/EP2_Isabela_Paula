@@ -2,11 +2,7 @@ Letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R
 import random
 import constantes
 
-def mapa_matrix(n):
-    matrix = []
-    for a in range(n):
-        matrix.append([" "]*n)
-    return matrix  
+
 
 def suporta_bloco (mapa, blocos, linha, coluna, sentido):
 
