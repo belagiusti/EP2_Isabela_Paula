@@ -265,8 +265,3 @@ if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
 else:
     print ('coluna invalida')
 
-
-
-
-
-
