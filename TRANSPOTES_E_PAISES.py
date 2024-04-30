@@ -195,7 +195,17 @@ for i in range(1, 11):
 print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
 
 
-if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
-    if in
-  
 
+lista_para_informe_linha =[ 1, 2, 3, 4, 5, 6, 7, ,8 ,9 ,10]
+
+if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
+    if informe_linha in lista_para_informe_linha:
+        for numero, lista in dic_mapa.items():
+            if numero == informe_linha:
+                if informe_letra == 'A':
+                    if [informe_linha][0] not ocupado:\
+                        dic_mapa[informe_linha][0] = ™¡ª
+    else: 
+        print ('linha invalida')
+else:
+    print ('coluna invalida')
