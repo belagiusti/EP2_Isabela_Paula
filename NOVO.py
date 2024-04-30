@@ -1,4 +1,3 @@
-
 TRANSPORTE = {
     'destroyer': 3,
     'porta-avioes': 5,
@@ -57,7 +56,7 @@ print (PAISES)
 lista_transporte_nome = []
 numero_nacao = input('Qual o número da nação da sua frota?')
 
-for numero in PAISES:
+for numero in PAISES.keys():
     if numero == numero_nacao:
         for pais, transportes_pais_qnt in numero.items():
             print ('Você escolheu a nação {0}'. format(pais))
@@ -107,13 +106,14 @@ print ('1')
 print () 
 
 print ('Coordenadas do seu disparo')
-letra = input('Letra:') 
-linha = input ('Linha:') 
-# ver linha 
-acerto = 'Água!'or  'BOOOOOOOMMMMMM!!!!!'
-print ('Jogador   ----->>>>> {0}{1}       {2}!'. format(letra,linha,acerto))
+informe_letra = input('Letra:') 
+informe_linha = input ('Linha:') 
 
-#Posição E6 já bombardeada!
+# # ver linha 
+# acerto = 'Água!'or  'BOOOOOOOMMMMMM!!!!!'
+# print ('Jogador   ----->>>>> {0}{1}       {2}!'. format(informe_letra,informe_linha,acerto))
+
+# #Posição E6 já bombardeada!
 
 
 
