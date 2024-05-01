@@ -105,7 +105,7 @@ print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
 
 
 
-dic_mapa_comp= {
+mapa_comp_visível= {
     'letra': ['A','B','C','D','E','F','G','H','I','J'],
     '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
     '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
@@ -148,7 +148,50 @@ for transportes, bloco in TRANSPORTE.items():
     for aviao in lista_navios_comp2:
         if transportes == aviao:
             lista_blocos.append(bloco)
+print(lista_blocos)
+
 
 print(lista_navios_comp2)
-print(lista_blocos)
                         
+mapa_comp_memoria= {
+    'letra': ['A','B','C','D','E','F','G','H','I','J'],
+    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
+    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
+    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
+    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
+    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
+    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
+    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
+    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
+    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
+    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
+    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+}
+
+#pegar um elemento (que representa o total de espaços que vão ser ocupados por um navio no mapa) da lista de blocos, 
+
+def posiciona_navio(mapa_comp_memoria, lista_blocos):
+ 
+    for linhas, lista_espaços in mapa_comp_memoria.items():
+        #escolhendo aonde alocar navio
+        seleciona_coluna = random.choice(range(0,10))
+        seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+        seleciona_sentido = random.choice(['h', 'v'])
+        for espaco in range(len(lista_espaços)):
+            seleciona_coluna = random.choice( mapa_comp_memoria['letras'])
+
+
+        #selecionando navio
+        for elemento in lista_blocos:
+            mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
+
+
+
+
+for linhas, lista_posicao in mapa_comp_memoria.items():
+    for posicao in lista_posicao:
+        for elemento in lista_blocos:
+            if posicao == ' ':
+                print("oi")
+
+
