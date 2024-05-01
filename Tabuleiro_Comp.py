@@ -133,16 +133,23 @@ import random
 frota_comp = random.choice(list(PAISES.keys()))
 # frota_comp = 5
 
-lista_navios_comp =[]
-lista_qntd_navios = []
+
+lista_navios_comp2 = []
+
 for numero, pais in PAISES.items():
     if numero==frota_comp:
         for pais,navios in pais.items():
             for navio, qntd in navios.items():
-                lista_navios_comp.append(navio)
-                lista_qntd_navios.append(qntd)
+                lista_navios_comp2.extend([navio] * qntd) 
+    
 
+preenche_bloco = [] 
+for aviao, bloco in TRANSPORTE.items():
+    for e in lista_navios_comp2:
+        if aviao == e:
+            preenche_bloco.append(bloco)
 
-print(lista_navios_comp)
-print(lista_qntd_navios)
+print(lista_navios_comp2)
+print(preenche_bloco)
+
                         
