@@ -143,13 +143,12 @@ for numero, pais in PAISES.items():
                 lista_navios_comp2.extend([navio] * qntd) 
     
 
-preenche_bloco = [] 
-for aviao, bloco in TRANSPORTE.items():
-    for e in lista_navios_comp2:
-        if aviao == e:
-            preenche_bloco.append(bloco)
+lista_blocos =[]
+for transportes, bloco in TRANSPORTE.items():
+    for aviao in lista_navios_comp2:
+        if transportes == aviao:
+            lista_blocos.append(bloco)
 
 print(lista_navios_comp2)
-print(preenche_bloco)
-
+print(lista_blocos)
                         
