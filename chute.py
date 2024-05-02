@@ -45,9 +45,9 @@ while chute_linha not in l_num:
 
 #Checa se a pessoa acertou o chute
 if mapa_comp_memoria[str(chute_linha )][posicao]== "N": 
-    mapa_comp_visível[str(chute_linha )][(posicao)]= 'A'
+    mapa_comp_visível[str(chute_linha )][(posicao)]= '\033[34m∎\033[0m'
 elif  mapa_comp_memoria[str(chute_linha)][posicao]== " ": 
-    mapa_comp_visível[str(chute_linha )][(posicao)]= "E" 
+    mapa_comp_visível[str(chute_linha )][(posicao)]= '\033[91m∎\033[0m'
 
 elif mapa_comp_visível[str(chute_linha )][(posicao)]== 'A' or mapa_comp_visível[str(chute_linha )][(posicao)]== "E": 
     print("Esse espaço já foi chutado anteriormente")

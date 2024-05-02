@@ -1,6 +1,4 @@
 import time
-#######COMECO JOGO FEITO#########
-########## COR ROXA ###########################################
 import random
 
 dic_mapa = {
@@ -245,6 +243,8 @@ def aloca_navios_jogador():
 
 # Chamada da função para alocar os navios do jogador
 aloca_navios_jogador()
+
+
 
 
 
