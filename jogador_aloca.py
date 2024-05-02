@@ -1,4 +1,5 @@
-import NOVO.py
+
+from NOVO import*
 
 
 # chute jogador 
@@ -9,11 +10,11 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
     while T < len(LISTA_TRANSPORTE_NOME_SEM_ALTERACAO):
         
 
-        # perguntar denovo
-        if y == 'Orientação inválida' or y == 'coluna invalida' or y == 'linha invalida' or y == 'Não foi possível alocar o navio':
-            informe_letra = input('Informe a Letra:')
-            informe_linha = input('Informe a Linha:')
-            informe_orientacao = input ('Informe a Orientação [v|h]:')
+        # # perguntar denovo
+        # if y == 'Orientação inválida' or y == 'coluna invalida' or y == 'linha invalida' or y == 'Não foi possível alocar o navio':
+        #     informe_letra = input('Informe a Letra:')
+        #     informe_linha = input('Informe a Linha:')
+        #     informe_orientacao = input ('Informe a Orientação [v|h]:')
         
 
 
@@ -41,7 +42,7 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
                                                 # pintar todos os blocos do navio 
                                                 c2 = 0 
                                                 while c2 <= quantidade-1:
-                                                    dic_mapa[informe_linha][c2] = (u"\u001b[42m   \u001b[0m")
+                                                    dic_mapa[informe_linha][c2] = (u"\u001b[32m   \u001b[0m")
                                                     c2 += 1 
                                                 T += 1 # conta quantas vezes ja pergntou e deu certo
 
@@ -511,16 +512,16 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
                 else: 
                     y = 'Orientação inválida'
                     print (y)
-                    chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+                    aloca_jogador  (informe_letra, informe_linha, informe_orientacao,quantidade)
             else: 
                 y = 'linha invalida'
                 print (y)
-                chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+                aloca_jogador  (informe_letra, informe_linha, informe_orientacao,quantidade)
 
         else:
             y = 'coluna invalida'
             print (y)
-            chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+            aloca_jogador  (informe_letra, informe_linha, informe_orientacao,quantidade)
 
 
 
@@ -539,6 +540,11 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
 # informe_letra = input('Informe a Letra:')
 #informe_linha = input('Informe a Linha:')
 # informe_orientacao = input ('Informe a Orientação [v|h]:')
+
+
+
+
+
 
 
 
