@@ -170,28 +170,35 @@ mapa_comp_memoria= {
 
 #pegar um elemento (que representa o total de espaços que vão ser ocupados por um navio no mapa) da lista de blocos, 
 
-def posiciona_navio(mapa_comp_memoria, lista_blocos):
- 
-    for linhas, lista_espaços in mapa_comp_memoria.items():
-        #escolhendo aonde alocar navio
-        seleciona_coluna = random.choice(range(0,10))
-        seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+for linhas, lista_espaços in mapa_comp_memoria.items():
+    for a in lista_blocos:
+    
         seleciona_sentido = random.choice(['h', 'v'])
-        for espaco in range(len(lista_espaços)):
-            seleciona_coluna = random.choice( mapa_comp_memoria['letras'])
+        seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+        seleciona_coluna = random.choice(range(0,10))
+
+        if seleciona_sentido == 'v':
+            while seleciona_linha + a > len(lista_espaços)-1 :
+                seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+                seleciona_coluna = random.choice(range(0,10))
+        else:
+            #sentido == h
+            while seleciona_linha + a  > 10:
+                seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+                seleciona_coluna = random.choice(range(0,10))
 
 
-        #selecionando navio
-        for elemento in lista_blocos:
-            mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
+# #posiciona navio
+# for elemento in lista_blocos:
+#     mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
+#     if seleciona_sentido == 'h':
+        
+#         mapa_comp_memoria[seleciona_linha][seleciona_coluna+elemento-1]
 
 
 
 
-for linhas, lista_posicao in mapa_comp_memoria.items():
-    for posicao in lista_posicao:
-        for elemento in lista_blocos:
-            if posicao == ' ':
-                print("oi")
+
+
 
 
