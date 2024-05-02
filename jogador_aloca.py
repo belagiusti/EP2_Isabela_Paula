@@ -1,4 +1,4 @@
-import NOVO
+import NOVO.py
 
 
 # chute jogador 
