@@ -1,5 +1,6 @@
 # quantidade de blocos por modelo de navio
-CONFIGURACAO = {
+
+TRANSPORTE = {
     'destroyer': 3,
     'porta-avioes': 5,
     'submarino': 2,
@@ -7,6 +8,7 @@ CONFIGURACAO = {
     'cruzador': 2,
     'couracado': 4
 }
+
 
 # frotas de cada pais
 PAISES =  {
