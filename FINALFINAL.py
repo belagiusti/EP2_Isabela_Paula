@@ -17,6 +17,7 @@ dic_mapa = {
 }
 
 def mapa_vazio(dic_mapa):
+    print ('         TABULEIRO JOGADOR        ')
     print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
 
     for i in range(1, 11):
@@ -248,3 +249,23 @@ aloca_navios_jogador()
 
 
 
+
+
+
+
+## NAVIOS JOGADOR ALOCADO !!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+mapa_vazio(dic_mapa)
+#MAPA COMP PRINTAR 
+
+
+
+
+
+# COMECAR CHUTES - NAO MISTURAR COM A PARTE DE CIMA - ISSO E OUTRA PARTE DO JOGO
+# COLOCAR CHUTE COMP E CHUTE JOG 
+# SEMPRE PRINTANDO SEUS MAPAS!
