@@ -204,7 +204,7 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
                                                 print ('Navio alocado!')
                                                 c2 = 0 
                                                 while c2 <= quantidade-1:
-                                                    dic_mapa[informe_linha][c2] = '\033[92m█\033[0m'#(u"\u001b[32m   \u001b[0m")
+                                                    dic_mapa[informe_linha][c2] = '\033[92m∎\033[0m'#(u"\u001b[32m   \u001b[0m")
                                                     c2 += 1 
                                                 
                                                 print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
