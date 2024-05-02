@@ -280,6 +280,14 @@ for i in range(len(numero_lista)):
                 QUANT_T += quantidade
 aloca = lista_transporte_nome[0]
 del lista_transporte_nome [0]
+
+
+
+
+numero_lista = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+vh_lista = ['v', 'h']
+
+
 for transporte_nome, quantidade in TRANSPORTE.items():
     if transporte_nome == aloca:
         for i in range(0,QUANT_T):
@@ -288,7 +296,120 @@ for transporte_nome, quantidade in TRANSPORTE.items():
                 informe_letra = input('Informe a Letra:')
                 informe_linha = input('Informe a Linha:')
                 informe_orientacao = input ('Informe a Orientação [v|h]:')
-                chute_jogador (informe_letra, informe_linha, informe_orientacao) # so esta colorindo a letra e numero citado, falta adcionar qnt de blocos e direcao
+
+
+
+                if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
+                    if informe_linha in numero_lista:
+                        if informe_orientacao in vh_lista:
+                            for numero, lista in dic_mapa.items():
+                                if numero == informe_linha:
+                                    if informe_letra == 'A' or informe_letra == 'a':
+                                        if dic_mapa[informe_linha][0] == ' ':
+                                            dic_mapa[informe_linha][0] = (u"\u001b[42m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'A' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'B' or informe_letra == 'b':
+                                        if dic_mapa[informe_linha][1] == ' ':
+                                            dic_mapa[informe_linha][1] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'B' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'C' or informe_letra == 'c':
+                                        if dic_mapa[informe_linha][2] == ' ':
+                                            dic_mapa[informe_linha][2] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'C' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'D' or informe_letra == 'd':
+                                        if dic_mapa[informe_linha][3] == ' ':
+                                            dic_mapa[informe_linha][3] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'D' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'E' or informe_letra == 'e':
+                                        if dic_mapa[informe_linha][4] == ' ':
+                                            dic_mapa[informe_linha][4] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'E' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'F' or informe_letra == 'f':
+                                        if dic_mapa[informe_linha][5] == ' ':
+                                            dic_mapa[informe_linha][5] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'F' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'G' or informe_letra == 'g':
+                                        if dic_mapa[informe_linha][6] == ' ':
+                                            dic_mapa[informe_linha][6] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'G' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'H' or informe_letra == 'h':
+                                        if dic_mapa[informe_linha][7] == ' ':
+                                            dic_mapa[informe_linha][7] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'H' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'I' or informe_letra == 'i':
+                                        if dic_mapa[informe_linha][8] == ' ':
+                                            dic_mapa[informe_linha][8] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'I' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                                    if informe_letra == 'J' or informe_letra == 'j':
+                                        if dic_mapa[informe_linha][9] == ' ':
+                                            dic_mapa[informe_linha][9] = (u"\u001b[32m   \u001b[0m")
+                                            print ('Navio alocado!')
+                                        else:
+                                            x = 'J' + informe_linha + informe_orientacao
+                                            print ('Não foi possível alocar o navio em {x}')
+                        else: 
+                            print ('Orientação inválida')
+                            informe_orientacao = input ('Informe a Orientação [v|h]:')
+                            chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+                    else: 
+                        y = 'linha invalida'
+                        print (y)
+                        informe_linha = input('Informe a Linha:')
+                        chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+
+                else:
+                    y = 'coluna invalida'
+                    print (y)
+                    informe_letra = input('Informe a Letra:')
+                    chute_jogador (informe_letra, informe_linha, informe_orientacao,quantidade)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                # chute_jogador (informe_letra, informe_linha, informe_orientacao) # so esta colorindo a letra e numero citado, falta adcionar qnt de blocos e direcao
                 print ('Todos os navios foram alocados!')
                 #print tabuleiro final alocado 
                 print ('Iniciando a batalha naval!')
