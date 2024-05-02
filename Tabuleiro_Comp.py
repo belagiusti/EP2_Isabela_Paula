@@ -42,68 +42,7 @@ PAISES =  {
     }}
 }
 
-dic_mapa_comp= {
-    'letra': ['A','B','C','D','E','F','G','H','I','J'],
-    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
-    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
-    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
-    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
-    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
-    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
-    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
-    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
-    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
-    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
-    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-}
-dic_mapa = {
-    'letra': ['A','B','C','D','E','F','G','H','I','J'],
-    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
-    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
-    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
-    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
-    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
-    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
-    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
-    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
-    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
-    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
-    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-}
-
-
-
-print("           MAPA COMPUTADOR                   ") #Imprime nome do mapa
-print("   " + "  ".join(dic_mapa_comp['letra']))  # Imprime a linha de letras
-for i in range(1, 11):
-    linha = dic_mapa_comp[str(i)]  # Pega a linha correspondente do dicionário
-    print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
-print("   " + "  ".join(dic_mapa_comp['letra2']))  # Imprime a linha de letras
-
-
-
-def printando_mapas (dic_mapa , dic_mapa_comp):
-    pula_linha ="\n"
-    print(pula_linha)
-    print("           MAPA COMPUTADOR           ")   
-    print(pula_linha)
-    print("   " + "  ".join(dic_mapa_comp['letra']))  # Imprime a linha de letras
-    for i in range(1, 11):
-        linha = dic_mapa_comp[str(i)]  # Pega a linha correspondente do dicionário
-        print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
-    print("   " + "  ".join(dic_mapa_comp['letra2']))  # Imprime a linha de letras
-
-
-    print(pula_linha)
-    print(pula_linha)
-    print("           MAPA JOGADOR           ")   
-    print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
-    for i in range(1, 11):
-        linha = dic_mapa[str(i)]  # Pega a linha correspondente do dicionário
-        print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
-print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
-
-
+  
 TRANSPORTE = {
     'destroyer': 3,
     'porta-avioes': 5,
@@ -115,8 +54,6 @@ TRANSPORTE = {
 
 import random
 frota_comp = random.choice(list(PAISES.keys()))
-# frota_comp = 5
-
 
 lista_navios_comp2 = []
 
@@ -132,11 +69,7 @@ for transportes, bloco in TRANSPORTE.items():
     for aviao in lista_navios_comp2:
         if transportes == aviao:
             lista_blocos.append(bloco)
-print(lista_blocos)
 
-
-print(lista_navios_comp2)
-                        
 mapa_comp_memoria= {
     'letra': ['A','B','C','D','E','F','G','H','I','J'],
     '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
@@ -153,58 +86,52 @@ mapa_comp_memoria= {
 }
 
 #pegar um elemento (que representa o total de espaços que vão ser ocupados por um navio no mapa) da lista de blocos, 
+for a in lista_blocos:
+    seleciona_sentido = random.choice(['h', 'v'])
+    seleciona_linha = 100
+    seleciona_coluna = 100
 
-for linhas, lista_espaços in mapa_comp_memoria.items():
-    for a in lista_blocos:
-    
-        seleciona_sentido = random.choice(['h', 'v'])
-        seleciona_linha = random.choice(range(1,11))
-        seleciona_coluna = random.choice(range(0,10))
-
-        if seleciona_sentido == 'v':
+    if seleciona_sentido == 'v':
+        for linhas, lista_espaços in mapa_comp_memoria.items():
             while seleciona_coluna + a > len(lista_espaços)-1 :
                 seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
-                if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " ": 
-                    mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
+            
+            if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " " : 
+                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
+                #enquanto os espaços coluna+blocos != "N"
+                for n in list(range(0, a)):
+                    while mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna+n] != "N":
+                        mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna+n] = "N"
 
-        else:
-            #sentido == h
+                    
+                #mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna+(a)] 
+
+    else:#sentido == h
+        for linhas, lista_espaços in mapa_comp_memoria.items():    
             while seleciona_linha + a  > 10:
-                # seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
                 seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
-                if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " ": 
-                    mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N'
 
-print(seleciona_coluna)
-print(seleciona_linha)
-print(seleciona_sentido)
-
-
-print("           MAPA MEMÓRIA     ") #Imprime nome do mapa
-print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
-for i in range(1, 11):
-    linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
-    print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
-print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
+            if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " ": 
+                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N'
+                for n in list(range(1, a+1)):
+                    while mapa_comp_memoria[str(seleciona_linha+n)][seleciona_coluna] != "N":
+                        mapa_comp_memoria[str(seleciona_linha+n)][seleciona_coluna] = "N"
 
 
 
-mapa_comp_visível= {
-    'letra': ['A','B','C','D','E','F','G','H','I','J'],
-    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
-    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
-    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
-    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
-    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
-    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
-    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
-    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
-    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
-    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
-    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-}
+
+# print("           MAPA MEMÓRIA     ") #Imprime nome do mapa
+# print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
+# for i in range(1, 11):
+#     linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
+#     print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+# print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
+
+
+
+
 
 
 
