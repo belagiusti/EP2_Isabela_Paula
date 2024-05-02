@@ -165,7 +165,8 @@ for linhas, lista_espaços in mapa_comp_memoria.items():
             while seleciona_coluna + a > len(lista_espaços)-1 :
                 seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
-                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
+                if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " ": 
+                    mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
 
         else:
             #sentido == h
@@ -173,7 +174,8 @@ for linhas, lista_espaços in mapa_comp_memoria.items():
                 # seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
                 seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
-                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N'
+                if mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]== " ": 
+                    mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N'
 
 print(seleciona_coluna)
 print(seleciona_linha)

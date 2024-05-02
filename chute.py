@@ -13,10 +13,14 @@ while chute_letra not in letr or chute_letra not in letrinha:
     else: 
         print("Coluna inválida")
         
-        
-while chute_linha not in list(range(1,11)):
-    chute_linha = input("Escolha uma linha (1 até 10): ")
-    if chute_linha in list(range(1,11)):
+print (list(range(1,11)) ) 
+
+l_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+while chute_linha not in l_num:
+    chute_linha = int(input("Escolha uma linha (1 até 10): "))
+    print(chute_linha)
+    if chute_linha in l_num:
         break
     else:
-        print("Escolha uma linha válida")
+        print("Selecione uma linha válida")
+    
