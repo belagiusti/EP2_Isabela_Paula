@@ -174,26 +174,44 @@ for linhas, lista_espaços in mapa_comp_memoria.items():
     for a in lista_blocos:
     
         seleciona_sentido = random.choice(['h', 'v'])
-        seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+        seleciona_linha = random.choice(range(1,11))
         seleciona_coluna = random.choice(range(0,10))
 
         if seleciona_sentido == 'v':
-            while seleciona_linha + a > len(lista_espaços)-1 :
-                seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+            while seleciona_coluna + a > len(lista_espaços)-1 :
+                seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
+                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
+                
         else:
             #sentido == h
             while seleciona_linha + a  > 10:
-                seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+                # seleciona_linha = random.choice(mapa_comp_memoria.keys[1:11])
+                seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
+                mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N'
+
+print(seleciona_coluna)
+print(seleciona_linha)
+print(seleciona_sentido)
 
 
-# #posiciona navio
-# for elemento in lista_blocos:
-#     mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
-#     if seleciona_sentido == 'h':
-        
-#         mapa_comp_memoria[seleciona_linha][seleciona_coluna+elemento-1]
+print("           MAPA INVISIVEL     ") #Imprime nome do mapa
+print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
+for i in range(1, 11):
+    linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
+    print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
+
+
+#posiciona navio
+# for linhas, lista_espaços in mapa_comp_memoria.items():
+#     for a in lista_blocos:
+
+#         mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
+#         if seleciona_sentido == 'h':
+            
+#             mapa_comp_memoria[seleciona_linha][seleciona_coluna+elemento-1]
 
 
 
