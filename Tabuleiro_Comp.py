@@ -104,22 +104,6 @@ def printando_mapas (dic_mapa , dic_mapa_comp):
 print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
 
 
-
-mapa_comp_visível= {
-    'letra': ['A','B','C','D','E','F','G','H','I','J'],
-    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
-    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
-    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
-    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
-    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
-    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
-    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
-    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
-    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
-    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
-    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-}
-
 TRANSPORTE = {
     'destroyer': 3,
     'porta-avioes': 5,
@@ -182,7 +166,7 @@ for linhas, lista_espaços in mapa_comp_memoria.items():
                 seleciona_linha = random.choice(range(1,11))
                 seleciona_coluna = random.choice(range(0,10))
                 mapa_comp_memoria[str(seleciona_linha)][seleciona_coluna]= 'N' #posicionou apenas a linha/coluna
-                
+
         else:
             #sentido == h
             while seleciona_linha + a  > 10:
@@ -196,7 +180,7 @@ print(seleciona_linha)
 print(seleciona_sentido)
 
 
-print("           MAPA INVISIVEL     ") #Imprime nome do mapa
+print("           MAPA MEMÓRIA     ") #Imprime nome do mapa
 print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
 for i in range(1, 11):
     linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
@@ -204,14 +188,21 @@ for i in range(1, 11):
 print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
 
 
-#posiciona navio
-# for linhas, lista_espaços in mapa_comp_memoria.items():
-#     for a in lista_blocos:
 
-#         mapa_comp_memoria[seleciona_linha][seleciona_coluna]= 'X'
-#         if seleciona_sentido == 'h':
-            
-#             mapa_comp_memoria[seleciona_linha][seleciona_coluna+elemento-1]
+mapa_comp_visível= {
+    'letra': ['A','B','C','D','E','F','G','H','I','J'],
+    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
+    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
+    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
+    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
+    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
+    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
+    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
+    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
+    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
+    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
+    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+}
 
 
 
