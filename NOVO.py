@@ -179,9 +179,7 @@ numero_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
     T = 0 
     while T < len(LISTA_TRANSPORTE_NOME_SEM_ALTERACAO):
-        informe_letra = str(input('Informe a Letra:'))
-        informe_linha = int(input('Informe a Linha:'))
-        informe_orientacao = str(input ('Informe a Orientação [v|h]:'))
+        
 
         #alocar/verifica 
         if informe_letra in Letras_minuscula or informe_letra in Letras_maiuscula:
@@ -876,6 +874,10 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
             print (y)
             aloca_jogador  (informe_letra, informe_linha, informe_orientacao,quantidade)
 
+        informe_letra = str(input('Informe a Letra:'))
+        informe_linha = input('Informe a Linha:')
+        informe_orientacao = str(input ('Informe a Orientação [v|h]:'))
+
 
 
 
@@ -953,8 +955,8 @@ def aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade):
 
 
 ##############################################################################################
-# numero_lista = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-numero_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numero_lista = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+# numero_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 vh_lista = ['v', 'h']
 Letras_maiuscula = ['A','B','C','D','E','F','G','H','I','J']
 Letras_minuscula= ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
@@ -967,9 +969,9 @@ for transporte_nome, quantidade in TRANSPORTE.items():
         for i in range(0,QUANT_T):
             if lista_transporte_nome== []:
                 print('Alocar: {0} ({1} blocos)'.format(aloca, quantidade))
-                informe_letra = str(input('Informe a Letra:'))
-                informe_linha = int(input('Informe a Linha:'))
-                informe_orientacao = str(input ('Informe a Orientação [v|h]:'))
+                informe_letra = input('Informe a Letra:')
+                informe_linha = input('Informe a Linha:')
+                informe_orientacao = input ('Informe a Orientação [v|h]:')
                 aloca_jogador (informe_letra, informe_linha, informe_orientacao,quantidade) # so esta colorindo a letra e numero citado, falta adcionar qnt de blocos e direcao
                 print('Todos os navios foram alocados!')
                 # #print tabuleiro final alocado 
@@ -986,11 +988,9 @@ for transporte_nome, quantidade in TRANSPORTE.items():
                 print('Próximos: {0}'.format(', '.join(lista_transporte_nome)))
                 aloca = lista_transporte_nome[0]
                 del lista_transporte_nome [0]
-                informe_letra = str(input('Informe a Letra:'))
-                informe_linha = int(input('Informe a Linha:'))
-                informe_orientacao = str(input ('Informe a Orientação [v|h]:'))
-                 # ver se pode alocar - chamar funcao - nao colocar codigo aqui 
-                 # se nao pode alocar: print()'Não foi possível alocar o navio em A1 h(informe_letra+ informe_linha + informe_orientacao)
+                informe_letra = input('Informe a Letra:')
+                informe_linha = input('Informe a Linha:')
+                informe_orientacao = input ('Informe a Orientação [v|h]:')
                 aloca_jogador(informe_letra, informe_linha, informe_orientacao,quantidade)
                 #print tabuleiro com navio alocado - chamar funcao apenas 
 
