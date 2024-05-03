@@ -6,7 +6,6 @@ def cria_mapa(N):
 
 
 
-
 #Navio pode ser alocado na posição?
 def posicao_suporta(mapa, blocos, linha, coluna, orientacao):
     # Verifica se a posição inicial está dentro do mapa
