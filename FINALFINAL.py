@@ -239,6 +239,7 @@ def aloca_navios_jogador():
             time.sleep(1)
         # Adicione aqui o código para iniciar a batalha naval
 
+
     else:
         print("Nação não encontrada!")
 
@@ -246,26 +247,108 @@ def aloca_navios_jogador():
 aloca_navios_jogador()
 
 
-
-
-
-
-
-
-
 ## NAVIOS JOGADOR ALOCADO !!!!!!!!!!!!!!!!!!!
-
-
-
-
-
 mapa_vazio(dic_mapa)
-#MAPA COMP PRINTAR 
+
+
+print("Sua vez de ATACAR!")
+pontos_jogador = 0 
+pontos_computador = 0
+
+mapa_comp_visível= {
+    'letra': ['A','B','C','D','E','F','G','H','I','J'],
+    '1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','1'],
+    '2': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','2'],
+    '3': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','3'],
+    '4': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','4'],
+    '5': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','5'],
+    '6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','6'],
+    '7': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','7'],
+    '8': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','8'],
+    '9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','9'],
+    '10': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ','10'],
+    'letra2': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+}
+
+
+print("           MAPA COMPUTADOR         ") #Imprime nome do mapa
+print("   " + "  ".join(mapa_comp_visível['letra']))  # Imprime a linha de letras
+for i in range(1, 11):
+    linha = mapa_comp_visível[str(i)]  # Pega a linha correspondente do dicionário
+    print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+print("   " + "  ".join(mapa_comp_visível['letra2']))  # Imprime a linha de letras
+
+chute_letra =''
+chute_linha =''
+letr =['A','B','C','D','E','F','G','H','I','J']
+letrinha=['a','b','c','d','e','f','g','h','i','j']
+
+
+while pontos_jogador<20 or pontos_computador <20:
+    print("Sua vez de ATACAR!")
+
+    chute_letra = input("Escolha uma Coluna (A até J): ")
+    while chute_letra not in letr and chute_letra not in letrinha:
+        print("Coluna inválida")
+        chute_letra = input("Escolha uma Coluna (A até J): ")
+    if chute_letra in letr:
+        posicao = letr.index(chute_letra)
+    else:                    
+        posicao = letrinha.index(chute_letra)
+
+
+    l_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    chute_linha=0
+    while chute_linha not in l_num :
+        chute_linha = int(input("Escolha uma linha (1 até 10): "))
+        if chute_linha not in l_num:
+            print("Selecione uma linha válida")
+
+    from Tabuleiro_Comp import*
+    #Checa se a pessoa acertou o chute
+    if mapa_comp_memoria[str(chute_linha )][posicao]== "N": 
+        mapa_comp_visível[str(chute_linha )][(posicao)]= "A" #'\033[34m∎\033[0m'
+        print("BOOOOOM! Você acertou")
+        pontos_jogador+=1
+    elif  mapa_comp_memoria[str(chute_linha)][posicao]== " ": 
+        mapa_comp_visível[str(chute_linha )][(posicao)]= "E" #'\033[91m∎\033[0m'
+        print("Você Errou")
+
+    elif mapa_comp_visível[str(chute_linha )][(posicao)]== 'A' or mapa_comp_visível[str(chute_linha )][(posicao)]== "E": 
+        print("Esse espaço já foi chutado anteriormente")
 
 
 
+    print("           MAPA COMPUTADOR         ") #Imprime nome do mapa
+    print("   " + "  ".join(mapa_comp_visível['letra']))  # Imprime a linha de letras
+    for i in range(1, 11):
+        linha = mapa_comp_visível[str(i)]  # Pega a linha correspondente do dicionário
+        print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+    print("   " + "  ".join(mapa_comp_visível['letra2']))  # Imprime a linha de letras
+
+    #CHUTE COMP NO JOG
+    linha_chute = random.choice(range(1,10))
+    coluna_chute = random.choice(range(0,9))
+    for linha, lista_situacao in dic_mapa.items():
+        if dic_mapa[str(linha_chute)][coluna_chute] == '\033[95m∎\033[0m':  
+            dic_mapa[str(linha_chute)][coluna_chute] = 'X'
+            print("Você foi atacado!")
+            pontos_computador+=1
+        elif dic_mapa[str(linha_chute)][coluna_chute] == ' ': 
+            dic_mapa[str(linha_chute)][coluna_chute] = '0'
+            
 
 
-# COMECAR CHUTES - NAO MISTURAR COM A PARTE DE CIMA - ISSO E OUTRA PARTE DO JOGO
-# COLOCAR CHUTE COMP E CHUTE JOG 
-# SEMPRE PRINTANDO SEUS MAPAS!
+    print("           MAPA JOGADOR       ") #Imprime nome do mapa
+    print("   " + "  ".join(dic_mapa['letra']))  # Imprime a linha de letras
+    for i in range(1, 11):
+        linha = dic_mapa[str(i)]  # Pega a linha correspondente do dicionário
+        print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+    print("   " + "  ".join(dic_mapa['letra2']))  # Imprime a linha de letras
+
+
+if pontos_computador>pontos_jogador:
+    print("Você perdeu")
+else:
+    print("Você ganhou!")
+    
