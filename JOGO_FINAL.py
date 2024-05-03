@@ -366,7 +366,7 @@ def FUNCAO_JOGO_FINAL(c):
         return (print("Você ganhou!"))
     
     
-print(FUNCAO_JOGO_FINAL(c)    )
+FUNCAO_JOGO_FINAL(c) 
 
 jogar_novamente = input("Jogar novamente? [s|n]")
 if jogar_novamente == 's':
