@@ -361,13 +361,12 @@ def FUNCAO_JOGO_FINAL(c):
 
 
     if pontos_computador>pontos_jogador:
-        print("Você perdeu")
+        return (print("Você perdeu"))
     else:
-        print("Você ganhou!")
+        return (print("Você ganhou!"))
     
-    return ''
-        
-            
+    
+print(FUNCAO_JOGO_FINAL(c)    )
 
 jogar_novamente = input("Jogar novamente? [s|n]")
 if jogar_novamente == 's':
@@ -376,4 +375,3 @@ if jogar_novamente == 'n':
     print ('Até a próxima!')
 
 
-FUNCAO_JOGO_FINAL(c)
