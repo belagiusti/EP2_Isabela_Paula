@@ -1,3 +1,4 @@
+from Tabuleiro_Comp import*
 import time
 import random
 
@@ -31,7 +32,20 @@ numeros_validos = range(1, 11)
 vh_lista = ['v', 'h']
 
 ################################ O COMECO!
-nacao_computador = random.choice(['Brasil', 'França', 'Austrália', 'Rússia', 'Japão'])
+# nacao_computador = random.choice(['Brasil', 'França', 'Austrália', 'Rússia', 'Japão'])
+
+if frota_comp == 1:
+    nacao_computador = 'Brasil'
+if frota_comp == 2:
+    nacao_computador = 'França'
+if frota_comp == 1:
+    nacao_computador = 'Austrália'
+if frota_comp == 1:
+    nacao_computador = 'Rússia'
+if frota_comp == 1:  
+    nacao_computador = 'Japão'
+
+
 
 print(' =====================================')
 print('|                                     |')
@@ -41,7 +55,7 @@ print(' =======   xxxxxxxxxxxxxxxxx   ======= ')
 print('')
 print('')
 print('Iniciando o Jogo!')
-print('Computador está alocando os navios de guerra do país {0}...'.format(nacao_computador))
+print('Computador está alocando os navios de guerra do país {0}...'.format(nacao_computador)) 
 print('Computador já está em posição de batalha!')
 print('')
 pula_linha =  '\n'
@@ -165,10 +179,6 @@ def print_tabuleiro(tabuleiro):
 # Inicializando o tabuleiro vazio
 tabuleiro = [[' ']*10 for _ in range(10)]
 
-# Aqui continua o seu código existente...
-
-# Aqui continua o seu código existente...
-
 # Função para imprimir o tabuleiro
 def print_tabuleiro(tabuleiro):
     letras = "  A B C D E F G H I J"
@@ -247,6 +257,9 @@ def aloca_navios_jogador():
 aloca_navios_jogador()
 
 
+
+
+
 ## NAVIOS JOGADOR ALOCADO !!!!!!!!!!!!!!!!!!!
 mapa_vazio(dic_mapa)
 
@@ -307,14 +320,14 @@ while pontos_jogador<20 or pontos_computador <20:
     from Tabuleiro_Comp import*
     #Checa se a pessoa acertou o chute
     if mapa_comp_memoria[str(chute_linha )][posicao]== "N": 
-        mapa_comp_visível[str(chute_linha )][(posicao)]= "A" #'\033[34m∎\033[0m'
+        mapa_comp_visível[str(chute_linha )][(posicao)]= '\033[91m∎\033[0m' 
         print("BOOOOOM! Você acertou")
         pontos_jogador+=1
     elif  mapa_comp_memoria[str(chute_linha)][posicao]== " ": 
-        mapa_comp_visível[str(chute_linha )][(posicao)]= "E" #'\033[91m∎\033[0m'
+        mapa_comp_visível[str(chute_linha )][(posicao)]=  '\033[34m∎\033[0m' 
         print("Você Errou")
 
-    elif mapa_comp_visível[str(chute_linha )][(posicao)]== 'A' or mapa_comp_visível[str(chute_linha )][(posicao)]== "E": 
+    elif mapa_comp_visível[str(chute_linha )][(posicao)]== '\033[91m∎\033[0m' or mapa_comp_visível[str(chute_linha )][(posicao)]== '\033[34m∎\033[0m': 
         print("Esse espaço já foi chutado anteriormente")
 
 
@@ -331,11 +344,11 @@ while pontos_jogador<20 or pontos_computador <20:
     coluna_chute = random.choice(range(0,9))
     for linha, lista_situacao in dic_mapa.items():
         if dic_mapa[str(linha_chute)][coluna_chute] == '\033[95m∎\033[0m':  
-            dic_mapa[str(linha_chute)][coluna_chute] = 'X'
+            dic_mapa[str(linha_chute)][coluna_chute] = '\033[91m∎\033[0m'
             print("Você foi atacado!")
             pontos_computador+=1
         elif dic_mapa[str(linha_chute)][coluna_chute] == ' ': 
-            dic_mapa[str(linha_chute)][coluna_chute] = '0'
+            dic_mapa[str(linha_chute)][coluna_chute] = '\033[34m∎\033[0m'
             
 
 
