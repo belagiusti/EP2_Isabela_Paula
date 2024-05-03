@@ -122,21 +122,10 @@ for a in lista_blocos:
 
 
 
-print("           MAPA MEMÓRIA     ") #Imprime nome do mapa
-print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
-for i in range(1, 11):
-    linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
-    print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
-print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
-
-
-
-
-
-
-
-
-
-
-
+# print("           MAPA MEMÓRIA     ") #Imprime nome do mapa
+# print("   " + "  ".join(mapa_comp_memoria['letra']))  # Imprime a linha de letras
+# for i in range(1, 11):
+#     linha = mapa_comp_memoria[str(i)]  # Pega a linha correspondente do dicionário
+#     print(str(i).rjust(2) + " " + "  ".join(linha))  # Imprime a linha com o número à esquerda e os valores separados por espaço
+# print("   " + "  ".join(mapa_comp_memoria['letra2']))  # Imprime a linha de letras
 
